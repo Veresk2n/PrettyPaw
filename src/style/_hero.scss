@@ -48,8 +48,13 @@
     flex-direction: column;
     justify-content: flex-end;
 
+      @include lg {
+        padding-bottom: 74px;
+      }
+
       @include xl {
         min-height: 780px;
+        padding-bottom: 100px;
       }
 
       @include xxl {
@@ -64,6 +69,11 @@
     line-height: 1;
     text-transform: uppercase;
     color: $back;
+
+    @include lg {
+      margin-bottom: 40px;
+      font-size: 52px;
+    }
 }
 
   &__subtitle {
@@ -71,6 +81,10 @@
     line-height: 1;
     text-transform: uppercase;
     color: $second;
+
+    @include lg {
+      font-size: 40px;
+    }
   }
 
   &::before {
