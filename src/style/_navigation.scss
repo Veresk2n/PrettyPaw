@@ -64,6 +64,15 @@
         background-color: $back;
       }
     }
+
+    &:hover {
+      color: $back;
+    }
+
+    &:focus {
+      color: $second;
+      background-color: $back;
+    }
   }
 
   &__button {

@@ -151,6 +151,18 @@ iframe {
     font-size: 20px;
     gap: 10px;
   }
+
+  &:hover {
+    color: $main;
+
+    &::after {
+      background-image: url("/src/img/arrow-right_black.svg");
+    }
+  }
+
+  &:focus {
+    border-color: $main;
+  }
 }
 
 .swiper-pagination-bullet {
