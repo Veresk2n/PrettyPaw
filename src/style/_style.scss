@@ -24,14 +24,14 @@ body {
   }
 }
 
-
-img, svg, video {
+img,
+svg,
+video {
   display: block;
   max-width: 100%;
   max-height: 100%;
   height: auto;
 }
-
 
 button {
   padding: 0;
@@ -73,7 +73,6 @@ iframe {
   transform: scale(0);
 }
 
-
 /*
 Пример контейнера
 
@@ -90,12 +89,19 @@ iframe {
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  @include xxl {
+    max-width: 2560px;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .container {
   padding-left: 16px;
   padding-right: 16px;
-
 
   @include sm {
     padding-left: 16px;
@@ -120,7 +126,7 @@ iframe {
   }
 }
 
-.link-main{
+.link-main {
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -133,11 +139,11 @@ iframe {
   border-radius: 80px;
 
   &:after {
-    content: '';
+    content: "";
     display: block;
     width: 16px;
     height: 16px;
-    background: url('/src/img/arrow-right.svg') center/contain no-repeat;
+    background: url("/src/img/arrow-right.svg") center/contain no-repeat;
   }
 
   @include lg {
@@ -148,15 +154,15 @@ iframe {
 }
 
 .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-    border-radius: 16px;
-    background-color: $second;
-    opacity: 1;
-    transition: width .3 ease; // но повиляет на оптимизацию немного!
+  width: 10px;
+  height: 10px;
+  border-radius: 16px;
+  background-color: $second;
+  opacity: 1;
+  transition: width 0.3 ease; // но повиляет на оптимизацию немного!
 }
 
 .swiper-pagination-bullet-active {
-    width: 40px;
-    background-color: $back;
+  width: 40px;
+  background-color: $back;
 }
