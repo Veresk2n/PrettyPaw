@@ -1,4 +1,5 @@
 .location {
+  position: relative;
   &__list {
     @include lg {
       display: flex;
@@ -44,10 +45,10 @@
       flex: 0 0 calc(100% / 5);
     }
 
-    &::after {
+    &:not(:last-child)::after {
       content: "";
       position: absolute;
-      z-index: 5;
+      z-index: 9;
       display: block;
       bottom: 0;
       right: 50%;
@@ -226,6 +227,7 @@
   }
 
   &__title {
+    z-index: 10;
     font-weight: 1000;
     font-size: 20px;
     line-height: 1;
@@ -250,6 +252,16 @@
 
     @include lg {
       display: none;
+    }
+  }
+
+  &__video-bg {
+    display: none;
+
+    @include lg {
+      display: block;
+      z-index: 5;
+      max-width: 2560px;
     }
   }
 }

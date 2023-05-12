@@ -1,94 +1,118 @@
 .career {
-    padding-top: 80px;
-    padding-bottom: 60px;
+  overflow-x: hidden;
+  padding-top: 80px;
+  padding-bottom: 40px;
+
+  @include lg {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  &__content {
+    margin-bottom: 40px;
+
+    @include md {
+      display: grid;
+      grid-template-columns: 1fr min-content;
+      justify-content: space-between;
+      gap: 11px 21px;
+      // grid-template-rows: min-content;
+      grid-template-areas:
+        "title         link"
+        "description   .";
+    }
 
     @include lg {
-        padding-top: 100px;
-        padding-bottom: 120px;
+      gap: 27px 31px;
+      margin-bottom: 50px;
     }
 
-    &__content {
-        margin-bottom: 40px;
+    @include xl {
+      grid-template-columns: 690px min-content;
+    }
+  }
 
-        @include md {
-            display: grid;
-            grid-template-columns: 75% minmax(155px, 209px,);
-            grid-template-rows: min-content;
-            grid-template-areas:
-                'title2         link2'
-                'description2   link2';
-            gap: 24px 21px;
-            justify-content: space-between;
-        }
+  &__title {
+    font-weight: 1000;
+    font-size: 32px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $second;
+    margin-bottom: 24px;
 
-        @include lg {
-            gap: 40px 31px;
-            margin-bottom: 50px;
-        }
-
-        @include xl {
-            grid-template-columns: 50% 209px;
-        }
+    @include md {
+      grid-area: title;
+      margin-bottom: 0;
     }
 
-    &__title {
-        font-weight: 1000;
-        font-size: 32px;
-        line-height: 1;
-        text-transform: uppercase;
-        color: $second;
-        margin-bottom: 24px;
+    @include lg {
+      font-size: 52px;
+    }
+  }
 
-        @include md {
-            margin-bottom: 0;
-        }
-        @include lg {
-            margin-bottom: 0;
-            font-size: 52px;
-        }
+  &__description {
+    margin-bottom: 24px;
+
+    @include md {
+      grid-area: description;
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    @include md {
+      grid-area: link;
+      // align-self: start;
+      // padding-top: 12.5px;
+      // padding-bottom: 12.5px;
+      // justify-content: center;
     }
 
-    &__description {
-        margin-bottom: 24px;
-
-        @include md {
-            grid-area: description2;
-            margin-bottom: 0;
-        }
-    }
-
-    &__link {
-        @include md {
-            grid-area: link2;
-            align-self: start;
-            padding-top: 12.5px;
-            padding-bottom: 12.5px;
-            justify-content: center;
-        }
-
-        @include lg {
-            justify-self: end;
-        }
-    }
-
-    // &__slider {
+    // @include lg {
+    //   justify-self: end;
     // }
+  }
 
+  &__slider {
+    overflow: visible;
+  }
 
-    // &__image-item {
-    // }
+  &__image-item {
+    height: unset;
+    display: flex;
+    align-items: center;
 
-    // &__image-wrapper {
-    // }
+    @include md {
+      &:nth-child(odd) {
+        width: 34%;
+      }
 
-    &__image {
-        border-radius: 16px;
+      &:nth-child(even) {
+        width: 25%;
+      }
     }
 
-    &__slider-pagination {
-        @include md {
-            display: none;
-        }
+    @include xl {
+      &:nth-child(odd) {
+        width: 27%;
+      }
+
+      &:nth-child(even) {
+        width: 20%;
+      }
     }
+  }
+
+  // &__image-wrapper {
+  // }
+
+  &__image {
+    border-radius: 16px;
+  }
+
+  &__slider-pagination {
+    @include md {
+      display: none;
+    }
+  }
 }
-
