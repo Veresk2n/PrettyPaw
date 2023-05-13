@@ -1,4 +1,5 @@
 import './index.html';
+import './page.html';
 // new modules
 import 'swiper/scss';
 import 'swiper/scss/pagination';
